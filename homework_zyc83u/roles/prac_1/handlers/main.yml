@@ -1,0 +1,8 @@
+---
+# handlers file for prac_1
+
+- name: Restart Mysql service
+  ansible.builtin.service:
+    name: "{{ var_service }}"
+    state: restarted
+

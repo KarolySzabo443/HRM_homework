@@ -1,0 +1,11 @@
+---
+# tasks file for prac_3
+- name: Write line to /etc/fstab
+  ansible.builtin.lineinfile:
+    path: /etc/fstab
+    state: present
+    line: UUID="fe94fdaa-279c-429c-9370-f03a0f8d1762"  /data/speci xfs defaults  0 0
+
+- name: Reboot system
+  ansible.builtin.reboot:
+

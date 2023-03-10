@@ -1,0 +1,11 @@
+---
+# vars file for prac_2
+var_package: nfs-utils
+var_service: nfs-server
+var_shared_dir: "/data/comp"
+var_owner: root
+var_group: root
+var_mode: "0644"
+var_lineinfile: "/data/comp (rw,sync)"
+var_firewall_service: nfs
+
