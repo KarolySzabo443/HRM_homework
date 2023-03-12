@@ -5,7 +5,7 @@
     name: "{{ var_package }}"
     state: present
 
-- name: Start and enabled mysqld service
+- name: Start and enable mysqld service
   ansible.builtin.service:
     name: "{{ var_service }}"
     state: started
@@ -49,6 +49,6 @@
 - name: Create databases
   community.mysql.mysql_db:
     name: 
-      - test11db
-      - test12db
+      - "{{ var_db1 }}"
+      - "{{ var_db2 }}"
     state: present

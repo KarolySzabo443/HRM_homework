@@ -4,8 +4,7 @@
   ansible.builtin.lineinfile:
     path: /etc/fstab
     state: present
-    line: UUID="fe94fdaa-279c-429c-9370-f03a0f8d1762"  /data/speci xfs defaults  0 0
-
+    line: "{{ var_lineinfile }}"
 - name: Reboot system
   ansible.builtin.reboot:
 

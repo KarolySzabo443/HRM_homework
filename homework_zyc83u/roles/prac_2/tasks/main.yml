@@ -5,13 +5,13 @@
     name: "{{ var_package }}"
     state: present
 
-- name: Start and Enable NFS service
+- name: Start and enable NFS service
   ansible.builtin.service:
     name: "{{ var_service }}"
     state: started
     enabled: true
 
-- name: Making directory for NFS
+- name: Create shared directory
   ansible.builtin.file:
     path: "{{ var_shared_dir }}"
     state: directory
@@ -19,7 +19,7 @@
     group: "{{ var_group }}"
     mode: "{{ var_mode }}"
 
-- name: Put the conf line in exports
+- name: Modify /etc/exports file
   ansible.builtin.lineinfile:
     path: "/etc/exports"
     state: present

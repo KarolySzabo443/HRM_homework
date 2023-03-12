@@ -11,4 +11,6 @@ var_setype: "mysqld_db_t"
 var_conffile: "/etc/my.cnf.d/mysql-server.cnf"
 var_datadirlineinfile: "datadir=/usr/local/db"
 var_socketlineinfile: "socket=/usr/local/db/db.sock"
+var_db1: "database1"
+var_db2: "database2"
 
