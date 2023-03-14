@@ -1,0 +1,7 @@
+---
+# vars file for prac_3
+var_path: /data/speci
+var_UUID: UUID=fe94fdaa-279c-429c-9370-f03a0f8d1762
+var_fstype: xfs
+var_opts: defaults
+

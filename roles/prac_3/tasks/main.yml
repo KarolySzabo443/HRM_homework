@@ -1,0 +1,13 @@
+---
+# tasks file for prac_3
+- name: Write line to /etc/fstab
+  ansible.posix.mount:
+    path: "{{ var_path }}"
+    src: "{{ var_UUID }}"
+    fstype: "{{ var_fstype }}"
+    opts: "{{ var_opts }}"
+    state: present
+
+- name: Reboot system
+  ansible.builtin.reboot:
+

@@ -1,0 +1,7 @@
+---
+
+- name: Creating new dir with specific SELinux label
+  hosts: webservers
+
+  roles:
+    - prac_4

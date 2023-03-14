@@ -1,0 +1,54 @@
+---
+
+- name: Ensure mysql package is installed
+  ansible.builtin.dnf:
+    name: "{{ var_package }}"
+    state: present
+
+- name: Start and enable mysqld service
+  ansible.builtin.service:
+    name: "{{ var_service }}"
+    state: started
+    enabled: true
+
+- name: Allow MySql service on firewall
+  ansible.posix.firewalld:
+    service: "{{ var_firewall_service }}"
+    immediate: true
+    permanent: true
+    state: enabled
+
+- name: Create the dir for databases
+  ansible.builtin.file:
+    path: "{{ var_dir }}"
+    state: directory
+    owner: "{{ var_owner }}"
+    group: "{{ var_group }}"
+    mode: "{{ var_mode }}"
+    setype: "{{ var_setype }}"
+
+- name: Change the datadir line in conf file
+  ansible.builtin.lineinfile:
+    path: "{{ var_conffile }}"
+    regexp: "^datadir"
+    line: "{{ var_datadirlineinfile }}"
+    backrefs: yes
+
+- name: Change socket line in conf file
+  ansible.builtin.lineinfile:
+    path: "{{ var_conffile }}"
+    regexp: "^socket"
+    line: "{{ var_socketlineinfile }}"
+    backrefs: yes
+
+- name: Restart Mysql service
+  ansible.builtin.service:
+    name: "{{ var_service }}"
+    state: restarted
+
+- name: Create databases
+  community.mysql.mysql_db:
+    name: 
+      - "{{ var_db1 }}"
+      - "{{ var_db2 }}"
+    state: present
