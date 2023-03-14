@@ -1,7 +1,0 @@
----
-
-- name: Attach rw,sync NFS 
-  hosts: webservers
-
-  roles:
-    - prac_2

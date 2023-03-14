@@ -1,8 +1,0 @@
----
-# vars file for prac_4
-var_owner: student
-var_group: student
-var_mode: '0640'
-var_setype: "public_content_t"
-var_dir: "/home/student/prac4dir"
-

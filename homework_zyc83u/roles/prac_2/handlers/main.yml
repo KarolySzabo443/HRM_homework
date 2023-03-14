@@ -1,6 +1,0 @@
----
-# handlers file for prac_2
-- name: Restart NFS service
-  ansible.builtin.service:
-    name: "{{ var_service }}"
-    state: restarted

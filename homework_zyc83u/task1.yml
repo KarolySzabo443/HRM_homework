@@ -1,7 +1,0 @@
----
-
-- name: Create mysql databases in specific directory
-  hosts: webservers
-
-  roles:
-    - prac_1

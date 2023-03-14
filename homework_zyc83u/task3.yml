@@ -1,7 +1,0 @@
----
-
-- name: Attaching with fstab by UUID
-  hosts: webservers
-
-  roles:
-    - prac_3
