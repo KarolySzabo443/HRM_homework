@@ -1,5 +1,6 @@
 [webservers]
 servera.lab.example.com
+serverb.lab.example.com
 
 [webservers:vars]
 ansible_python_interpreter=/usr/bin/python3
